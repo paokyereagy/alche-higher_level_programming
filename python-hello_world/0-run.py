@@ -1,1 +1,2 @@
-c is fun!
+#!/usr/bin/env python3
+print("C is fun!")
