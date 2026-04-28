@@ -6,7 +6,7 @@ This module defines a Square class.
 
 class Square:
     """
-    Class that defines square by private attributes: size and position.
+    Class that defines square by private attribute.
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -28,12 +28,12 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
-        if (not isinstance(position, tuple)
-                or len(position) != 2 
-                or not all(isinstance(num, int) for num in position)
-                or not all(num >= 0 for num in position)):
-                raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
+        if (not isinstance(position, tuple) or
+                len(position) != 2 or 
+                not all(isinstance(num, int) for num in position) or
+                not all(num >= 0 for num in position)): or
+             raise TypeError("position must be a tuple of 2 positive integers")
+             self.__position = position
 
     @property
     def size(self):
@@ -57,12 +57,12 @@ class Square:
     @position.setter
     def position(self, value):
         """Set the position of the square."""
-        if (not isinstance(value, tuple)
-                or len(value) != 2 
-                or not all(isinstance(num, int) for num in value) 
-                or  not all(num >= 0 for num in value)):
-                raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        if (not isinstance(value, tuple) or
+                 len(value) != 2 or
+                 not all(isinstance(num, int) for num in value) or 
+                 not all(num >= 0 for num in value)): or
+             raise TypeError("position must be a tuple of 2 positive integers")
+             self.__position = value
 
     def area(self):
         """Return the current square area."""
@@ -72,7 +72,6 @@ class Square:
         """
         Print the square with the character '#'.
         If size is equal to 0, print an empty line.
-        Position is used to offset the square with spaces and newlines.
         """
         if self.__size == 0:
             print("")
