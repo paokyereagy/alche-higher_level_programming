@@ -3,6 +3,7 @@
 This module defines a Square class with size and position attributes.
 """
 
+
 class Square:
     """Class that defines a square."""
 
@@ -33,8 +34,10 @@ class Square:
     @position.setter
     def position(self, value):
         """Set the position of the square with validation."""
-        if (not isinstance(value, tuple) or len(value) != 2 or
-        any(not isinstance(n, int) or n < 0 for n in value)):
+        if (
+        not isinstance(value, tuple) or len(value) != 2 or
+        any(not isinstance(n, int) or n < 0 for n in value)
+):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
