@@ -3,7 +3,6 @@
 This module defines a Rectangle class.
 """
 
-
 class Rectangle:
     """Class that defines a rectangle by width and height"""
 
@@ -62,3 +61,7 @@ class Rectangle:
     def __repr__(self):
         """Return a string representation to recreate the instance"""
         return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Print a message when an instance is deleted"""
+        print("Bye rectangle...")
